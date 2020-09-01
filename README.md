@@ -2,10 +2,11 @@
 
 # ShoppingCartIonic
 to run-> 
-* npm install
-* ionic start
+* 'npm install'
+* 'ng start' or 'ionic start'
+
 
 # ShoppingCartExpress
 to run->
-* npm install
-* npm start
+* 'npm install'
+* 'npm start' or 'node app'
