@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ProductService } from '../service/product.service'
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,24 +9,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
-  constructor(private http: HttpClient) {}
+  constructor(private productService:ProductService,
+    private http: HttpClient) {}
 
-  getNews(){
-    var url = 'http://localhost:3000/users';
-    console.log('xcxj');
-    this.http.get(url, {responseType: 'text'})
-    .subscribe(
-      data => {
-        // Set the data to display in the template
-        console.log(data);
-        // this.data = data;
-      }
-    );
-   
+  allProducts;
+
+  getAllProducts()
+  {
+    this.productService.getProduct('/products').subscribe(data => {
+      console.log(data);
+      this.allProducts= data;
+    });
   }
 
+
   ngOnInit() {
-      this.getNews();
-    }
+    this.getAllProducts();
+  }
+  
   
 }
+

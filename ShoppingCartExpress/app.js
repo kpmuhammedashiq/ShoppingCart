@@ -5,17 +5,22 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser= require('body-parser');
 const cors=require('cors');
-
+const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productRouter= require('./routes/products');
 const { connected } = require('process');
 
 var app = express();
+
+mongoose.connect("mongodb+srv://rain:rain@123@cluster0.tjxyl.mongodb.net/test?retryWrites=true&w=majority",
+{ useNewUrlParser: true },  ()=> console.log('DB connected!!'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // });
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use('/products', productRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
