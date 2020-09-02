@@ -14,4 +14,8 @@ export class ProductService {
     return this.http.get('http://localhost:3000'+urlPath);
   }
 
+  getProductById(urlPath,id){
+    return this.http.get('http://localhost:3000'+urlPath+'/'+id);
+  }t
+
 }

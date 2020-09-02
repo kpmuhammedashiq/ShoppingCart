@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{product?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <br><br>
+    <img src= "assets/icon/burger.jpeg"/>
+    <br><br>
+      <h3>{{product?.description}}</h3>
+      <br>
+      <span> Rs. {{product?.price}} </span>   
+    </div>
+
+  <ion-card-content></ion-card-content>
+
+</ion-content>

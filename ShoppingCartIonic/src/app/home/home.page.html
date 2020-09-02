@@ -19,19 +19,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let product of allProducts">
+  <ion-card *ngFor="let product of allProducts" (click)="productDetaills(product?._id)">
     <ion-card-header>
       <ion-card-title>{{product?.name}}</ion-card-title>
       <img src="assets/icon/burger.jpeg" />
     </ion-card-header>
   
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
+    <ion-card-content>{{product?.description}}</ion-card-content>
+    <ion-card-content class="ion-text-end">Rs. {{product?.price}}    </ion-card-content>
   </ion-card>
 
   <!-- <ion-list>
     <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
   </ion-list> -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button (click)="toCart()" color="dark">
+      <ion-icon name="cart" ></ion-icon>
+    </ion-fab-button></ion-fab>
 </ion-content>
+
