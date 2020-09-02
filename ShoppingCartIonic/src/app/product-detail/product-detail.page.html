@@ -14,9 +14,18 @@
     <br><br>
       <h3>{{product?.description}}</h3>
       <br>
-      <span> Rs. {{product?.price}} </span>   
+      <span> Rs. {{product?.price}} </span>  
+      <br><br>
+      
+      <ion-input type="number" placeholder="Enter Input" min="0" [(ngModel)]="quantity">enter the quantity:</ion-input> 
+      <br>
+    <h3>
+      total: {{product?.price*quantity}}
+    </h3>
     </div>
-
-  <ion-card-content></ion-card-content>
-
+    <br>
+  <ion-button (click)="saveOrder(product?._id)" expand="block" shape="round">
+    add to cart
+  </ion-button>
+  
 </ion-content>

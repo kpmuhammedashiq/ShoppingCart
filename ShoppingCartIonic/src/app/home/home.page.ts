@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../service/product.service'
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +10,7 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private productService:ProductService,
-    private router: Router,
-    private http: HttpClient) {}
+    private router: Router) {}
 
   allProducts;
 

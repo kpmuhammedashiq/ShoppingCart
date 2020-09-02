@@ -8,5 +8,20 @@
 </ion-header>
 
 <ion-content>
+  <ion-card *ngFor="let product of ordered,let i=index">
+    <ion-card-header>
+      <ion-card-title>{{product?.name}}</ion-card-title>
+      <img src="assets/icon/burger.jpeg" />
+    </ion-card-header>
+  
+    <ion-card-content>quantity:{{product?.quantity}}</ion-card-content>
+    <ion-card-content class="ion-text-end">Rs. {{product?.price*product?.quantity}}</ion-card-content>
+  </ion-card>
 
+  <h3>
+    <!-- total amount Rs. {{totalAmount()}} -->
+  </h3>
+  <ion-button (click)="chekOut(product?._id)" expand="block" shape="round">
+    check out
+  </ion-button>
 </ion-content>

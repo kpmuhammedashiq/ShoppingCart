@@ -16,6 +16,12 @@ export class ProductService {
 
   getProductById(urlPath,id){
     return this.http.get('http://localhost:3000'+urlPath+'/'+id);
-  }t
+  }
+
+
+  updateProduct(urlPath,id, product){
+    this.http.put('http://localhost:3000'+urlPath+'/'+id, product).subscribe();
+  }
+
 
 }
