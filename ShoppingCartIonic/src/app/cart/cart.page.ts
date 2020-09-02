@@ -14,7 +14,6 @@ export class CartPage implements OnInit {
 
   allProducts;
   ordered;
-  totalAmount=0;
 
   getAllProducts()
   {
@@ -33,13 +32,13 @@ export class CartPage implements OnInit {
     });
   }
 
-  // totalAmount(){
-  //   var total= 0;
-  //   this.ordered.forEach(elt => {
-  //     total=total+(elt.price*elt.quantity);
-  //   });
-  //   return total;
-  // }
+  chekOut(){
+    var total= 0;
+    this.ordered.forEach(elt => {
+      total=total+(elt.price*elt.quantity);
+    });
+    this.router.navigate(['/payment',total]);
+  }
 
   ngOnInit() {
     this.getAllProducts();

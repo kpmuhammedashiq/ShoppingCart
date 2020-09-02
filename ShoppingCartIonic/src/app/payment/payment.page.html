@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><b>Shopping Cart App</b></ion-card-title>
+      <br><br>
+      <ion-card-title>total amount to be paid</ion-card-title>
+      <br>
+      <ion-card-title>Rs. {{totalAmount}}</ion-card-title>
+    </ion-card-header>
+   </ion-card>
+   <br>
+   <ion-button (click)="payAmount()" expand="block" shape="round">
+    pay amount
+  </ion-button>
+</ion-content>

@@ -35,7 +35,6 @@ export class ProductDetailPage implements OnInit {
     this.acivaterouter.params.subscribe(params => {
       const id= params['id']; //use this id to get  details..!
       this.fetchProduct(id);
-    
     });
   }
 
