@@ -12,16 +12,16 @@
     <br><br>
     <img src= "assets/icon/burger.jpeg"/>
     <br><br>
-      <h3>{{product?.description}}</h3>
-      <br>
-      <span> Rs. {{product?.price}} </span>  
+      <span>{{product?.description}}</span>
+      <br><br><br>
+      <span>item price Rs. {{product?.price}} </span>  
       <br><br>
       
-      <ion-input type="number" placeholder="Enter Input" min="0" [(ngModel)]="quantity">enter the quantity:</ion-input> 
+      <ion-input type="number" placeholder="Enter Input" min="0" [(ngModel)]="quantity">enter the quantity needed:</ion-input> 
       <br>
-    <h3>
+    <span>
       total: {{product?.price*quantity}}
-    </h3>
+    </span>
     </div>
     <br>
   <ion-button (click)="saveOrder(product?._id)" expand="block" shape="round">
